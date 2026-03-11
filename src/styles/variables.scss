@@ -1,0 +1,9 @@
+$variables: (
+  tablet: 640px,
+  desktop: 1024px,
+  large: 1440px,
+);
+
+@function screemSize($device) {
+  @return map-get($variables, $device);
+}
