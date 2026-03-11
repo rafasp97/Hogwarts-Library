@@ -10,18 +10,22 @@
 
 .imageWrapper {
   width: 100%;
-  height: 340px;
+  height: 21.25rem;
 
   @media (min-width: vars.screemSize(tablet)) {
-    height: 240px;
+    height: 15rem;
   }
 
   @media (min-width: vars.screemSize(desktop)) {
-    height: 340px;
+    height: 21.25rem;
   }
 
   @media (min-width: vars.screemSize(xxl)) {
-    height: 440px;
+    height: 27.5rem;
+  }
+
+  @media (orientation: landscape) and (max-width: vars.screemSize(desktop)) {
+    height: 18.75rem;
   }
 }
 
