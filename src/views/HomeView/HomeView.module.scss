@@ -1,16 +1,23 @@
 @use "../../styles/variables.scss" as vars;
 .homeview{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
     height: 100%;
     background-image: url('/images/backgrounds/homeview.jpg'); 
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center; 
+
+  .logoContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
   .logo {
     width: 80%;
     height: auto;
+    margin-bottom: 5%;
 
     @media (min-width: vars.screemSize(tablet)) {
       width: 70%;
