@@ -74,6 +74,7 @@
     .textContainer {
       padding: 0em 0.5em;
       height: 20vh;
+      margin-bottom: 1em;
       > h2 {
         margin-top: 1rem;
         color: white;
@@ -93,8 +94,12 @@
       @media (min-width: vars.screemSize(tablet)) {
         height: 100%;
         margin-top: 5em;
+        margin-bottom: 0em;
         > h2 { font-size: 3.5em; }
-        > p { font-size: 1.5em; height: 40%;}
+        > p { 
+          font-size: 1.5em; 
+          height: 40%;
+        }
       }
 
       @media (min-width: vars.screemSize(desktop)) {
