@@ -30,5 +30,9 @@
       @media (min-width: vars.screemSize(large)) {
         width: 40%;
     }
+
+    @media (orientation: landscape) and (max-width: vars.screemSize(desktop)) {
+      width: 45%;
+    }
   }
 }

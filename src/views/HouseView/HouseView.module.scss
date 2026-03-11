@@ -110,6 +110,15 @@
           height: 40%;
         }
       }
+
+      @media (orientation: landscape) and (max-width: vars.screemSize(desktop)) {
+        margin-top: 0em;
+        > h2 { font-size: 2em; }
+        > p { 
+          font-size: 1.1em;
+          height: 40%;
+        }
+      }
     }
   }
 
@@ -128,12 +137,8 @@
       width: 90%;
     }
 
-    @media (min-width: vars.screemSize(desktop)) {
-      width: 90%;
-    }
-
-    @media (min-width: vars.screemSize(large)) {
-        width: 90%;
+    @media (orientation: landscape) and (max-width: vars.screemSize(desktop)) {
+      width: 50%;
     }
   }
 
@@ -142,7 +147,11 @@
     height: auto;
 
     @media (min-width: vars.screemSize(tablet)) {
-        width: 11em;
+        width: 11rem;
+    }
+
+    @media (orientation: landscape) and (max-width: vars.screemSize(desktop)) {
+      width: 6rem;
     }
   }
 
