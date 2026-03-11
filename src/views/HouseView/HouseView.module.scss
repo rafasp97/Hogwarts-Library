@@ -86,11 +86,11 @@
 
 
   .flag {
-    width: 10rem;
+    width: 9rem;
     height: auto;
 
     @media (min-width: vars.screemSize(large)) {
-        width: 11em;
+        width: 11rem;
     }
   }
 
