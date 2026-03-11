@@ -48,7 +48,7 @@ export default function HouseView() {
 
   return (
     <div className={styles.houseview}>
-      <div className={styles.logoContainer}>
+      <header className={styles.logoContainer}>
         <Image
           src="/images/houses.png"
           alt="Hogwarts Library Logo"
@@ -56,7 +56,7 @@ export default function HouseView() {
           height={300}
           className={styles.logo}
         />
-      </div>
+      </header>
       <section>
         <div className={styles.flagsSlider} ref={sliderRef}>
           <div

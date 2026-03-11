@@ -4,6 +4,7 @@ $variables: (
   tablet: 640px,
   desktop: 1024px,
   large: 1440px,
+  xxl: 1640px
 );
 
 @function screemSize($device) {

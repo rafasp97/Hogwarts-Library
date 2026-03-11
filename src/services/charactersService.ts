@@ -1,0 +1,23 @@
+import axios from "axios";
+import { ICharacter } from "@/interface/Character.Interface";
+
+const api = axios.create({
+  baseURL: "https://hp-api.onrender.com/api",
+  timeout: 5000,
+});
+
+export const CharactersService = {
+  getAll: async (): Promise<ICharacter[]> => {
+    const response = await api.get<any[]>("/characters");
+
+    const characters: ICharacter[] = response.data.map((c) => ({
+      id: c.id || c.name, 
+      name: c.name,
+      image: c.image,
+      house: c.house,
+      species: c.species,
+    }));
+
+    return characters;
+  },
+};

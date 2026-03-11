@@ -7,7 +7,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 30vh;
+  padding: 2em 0em;
 
   @media (orientation: landscape) and (max-width: vars.screemSize(desktop)) {
     height: 60vh;
@@ -20,24 +20,20 @@
   }
   
   .logo {
-    width: 80%;
+    width: 50%;
     height: auto;
     margin-bottom: 5%;
 
     @media (min-width: vars.screemSize(tablet)) {
-      width: 70%;
+      width: 50%;
     }
 
     @media (min-width: vars.screemSize(desktop)) {
-      width: 60%;
-    }
-
-    @media (min-width: vars.screemSize(large)) {
-        width: 40%;
+      width: 40%;
     }
 
     @media (orientation: landscape) and (max-width: vars.screemSize(desktop)) {
-      width: 35%;
+      width: 25%;
     }
   }
 
