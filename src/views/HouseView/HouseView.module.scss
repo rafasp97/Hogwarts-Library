@@ -15,47 +15,72 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    overflow: hidden;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory; 
-    -webkit-overflow-scrolling: touch;
-    margin-bottom: 0.5em;
+
+    @media (min-width: vars.screemSize(desktop)) {
+      flex-direction: row;
+      > :first-child {
+        flex: 0 0 40%;
+      }
+
+      > :last-child {
+        flex: 0 0 60%;
+      }
+    }
+
+    .flagsSlider {
+      width: 100%;
+      overflow: hidden;
+    }
 
     .flagsWrapper {
       display: flex;
-      flex-direction: row; 
-      transition: transform 0.3s ease;
-
+      width: 100%;
+      transition: transform 0.4s ease;
+      
       .flagItem {
         flex: 0 0 100%;
+        scroll-snap-align: center;
+      }
+
+      .flagContainer {
+        flex: 0 0 100%;
         display: flex;
-        flex-direction: column;
         align-items: center;
         justify-content: center;
         text-align: center;
+      }
+    }
 
-        > h2 {
-          margin-top: 1rem;
-          color: white;
-          text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
-          font-size: 1.5em;
-        }
+    .textContainer {
+      padding: 0em 0.5em;
+      height: 20vh;
+      > h2 {
+        margin-top: 1rem;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+        font-size: 1.5em;
+        letter-spacing: 0.5px;
+      }
 
-        > p {
-          margin-top: 0.5rem;
-          color: white;
-          text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
-          font-size: 1em;
-          width: 90%;
-          height: 5em;
-        }
+      > p {
+        margin-top: 0.5rem;
+        color: white;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+        font-size: 1.1em;
+        text-align: justify;
+      }
 
-        @media (min-width: vars.screemSize(tablet)) {
-          > h2 { font-size: 2.5em; }
-          > p { font-size: 1.2em; }
-        }
+      @media (min-width: vars.screemSize(tablet)) {
+        height: 100%;
+        > h2 { font-size: 2.5em; }
+        > p { font-size: 1.2em; }
+      }
+
+      @media (min-width: vars.screemSize(desktop)) {
+        > h2 { font-size: 5em; }
+        > p { font-size: 1.7em;}
       }
     }
   }
@@ -67,7 +92,7 @@
   }
 
   .logo {
-    width: 40%;
+    width: 50%;
     height: auto;
     margin-top: 2rem;
 
@@ -76,22 +101,32 @@
     }
 
     @media (min-width: vars.screemSize(desktop)) {
-      width: 50%;
+      width: 90%;
     }
 
     @media (min-width: vars.screemSize(large)) {
-        width: 70%;
+        width: 90%;
     }
   }
-
 
   .flag {
-    width: 9rem;
+    width: 9.5rem;
     height: auto;
 
-    @media (min-width: vars.screemSize(large)) {
-        width: 11rem;
+    @media (min-width: vars.screemSize(desktop)) {
+        width: 10em;
     }
   }
+
+  .controls {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+      > button {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+    }
 
 }
