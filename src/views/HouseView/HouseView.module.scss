@@ -116,7 +116,7 @@
         > h2 { font-size: 2em; }
         > p { 
           font-size: 1.1em;
-          height: 40%;
+          height: 7em;
         }
       }
     }
@@ -151,7 +151,7 @@
     }
 
     @media (orientation: landscape) and (max-width: vars.screemSize(desktop)) {
-      width: 6rem;
+      width: 5.4rem;
     }
   }
 
