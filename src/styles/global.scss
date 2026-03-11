@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -6,6 +8,7 @@
 
 :root {
   --font-montserrat: 'Montserrat', sans-serif;
+  --font-oswald: "Oswald", sans-serif;
 }
 
 html,
@@ -25,10 +28,16 @@ body.root-layout {
   flex: 1; 
 }
 
-a {
+a, h2 {
   text-decoration: none;
   color: inherit;
   font-weight: 600;
+  font-family: var(--font-oswald);
+  font-size: 1.2em;
+}
+
+h2 {
+  font-size: 1.7em;
 }
 
 img {

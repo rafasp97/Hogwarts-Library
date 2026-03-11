@@ -1,3 +1,5 @@
+@use "sass:map";
+
 $variables: (
   tablet: 640px,
   desktop: 1024px,
@@ -5,5 +7,5 @@ $variables: (
 );
 
 @function screemSize($device) {
-  @return map-get($variables, $device);
+  @return map.get($variables, $device);
 }

@@ -8,7 +8,7 @@ export default function HomeView() {
       <Header/>
       <div  className={styles.logoContainer}>
         <Image
-          src="/images/logo.png"
+          src="/images/logo1.png"
           alt="Hogwarts Library Logo"
           width={800} 
           height={400} 
