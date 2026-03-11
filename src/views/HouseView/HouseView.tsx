@@ -1,11 +1,12 @@
 import Image from "next/image";
 import styles from "./HouseView.module.scss";
 import { flags } from "@/utils/flags";
-import { useState, useEffect  } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export default function HouseView() {
   const [index, setIndex] = useState(0);
   const [width, setWidth] = useState(0);
+  const sliderRef = useRef<HTMLDivElement | null>(null);
 
   const next = () => {
     setIndex((prev) => (prev + 1) % flags.length);
@@ -23,6 +24,28 @@ export default function HouseView() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  useEffect(() => {
+    if (!sliderRef.current || width > 1024) return;
+
+    const slider = sliderRef.current;
+
+    const handleScroll = () => {
+      const scrollLeft = slider.scrollLeft;
+      const containerWidth = slider.offsetWidth;
+      let newIndex = Math.round(scrollLeft / containerWidth);
+      newIndex = Math.max(0, Math.min(newIndex, flags.length - 1));
+
+      setIndex((prevIndex) => {
+        if (prevIndex !== newIndex) return newIndex;
+        return prevIndex;
+      });
+    };
+
+    slider.addEventListener("scroll", handleScroll);
+
+    return () => slider.removeEventListener("scroll", handleScroll);
+  }, [width]);
+
   return (
     <div className={styles.houseview}>
       <div className={styles.logoContainer}>
@@ -35,10 +58,12 @@ export default function HouseView() {
         />
       </div>
       <section>
-        <div className={styles.flagsSlider}>
+        <div className={styles.flagsSlider} ref={sliderRef}>
           <div
             className={styles.flagsWrapper}
-            style={{ transform: `translateX(-${index * 100}%)` }}
+            style={{ 
+              transform: width > 640 ? `translateX(-${index * 100}%)` : undefined 
+            }}
           >
             {flags.map((flag) => (
               <div key={flag.name} className={styles.flagContainer}>
@@ -57,14 +82,16 @@ export default function HouseView() {
           <h2>{flags[index].name}</h2>
           <p>
             {flags[index].description} 
-            {width > 1024 ? flags[index].extension : ""}
+            {width > 864 ? flags[index].extension : ""}
           </p>
+          {width > 640 &&
+            <div className={styles.controls}>
+              <button onClick={prev}>◀</button>
+              <button onClick={next}>▶</button>
+            </div>
+          }
         </div>
       </section>
-      <div className={styles.controls}>
-        <button onClick={prev}>◀</button>
-        <button onClick={next}>▶</button>
-      </div>
     </div>
   );
 }

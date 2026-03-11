@@ -18,7 +18,7 @@
     justify-content: space-around;
     align-items: center;
 
-    @media (min-width: vars.screemSize(desktop)) {
+    @media (min-width: vars.screemSize(tablet)) {
       flex-direction: row;
       > :first-child {
         flex: 0 0 40%;
@@ -32,6 +32,8 @@
     .flagsSlider {
       width: 100%;
       overflow: hidden;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
     }
 
     .flagsWrapper {
@@ -50,6 +52,22 @@
         align-items: center;
         justify-content: center;
         text-align: center;
+        padding-bottom: 0.5em;
+      }
+    }
+
+    @media (min-width: vars.screemSize(tablet)) {
+      .flagsSlider {
+        overflow-x: hidden;  
+      }
+
+      .flagsWrapper {
+        flex-direction: row;       
+      }
+
+      .flagContainer {
+        flex: 0 0 auto;  
+        padding-bottom: 0;  
       }
     }
 
@@ -74,13 +92,18 @@
 
       @media (min-width: vars.screemSize(tablet)) {
         height: 100%;
-        > h2 { font-size: 2.5em; }
-        > p { font-size: 1.2em; }
+        margin-top: 5em;
+        > h2 { font-size: 3.5em; }
+        > p { font-size: 1.5em; height: 40%;}
       }
 
       @media (min-width: vars.screemSize(desktop)) {
+        margin-top: 0em;
         > h2 { font-size: 5em; }
-        > p { font-size: 1.7em;}
+        > p { 
+          font-size: 1.7em;
+          height: 40%;
+        }
       }
     }
   }
@@ -97,7 +120,7 @@
     margin-top: 2rem;
 
     @media (min-width: vars.screemSize(tablet)) {
-      width: 60%;
+      width: 90%;
     }
 
     @media (min-width: vars.screemSize(desktop)) {
@@ -110,22 +133,31 @@
   }
 
   .flag {
-    width: 8rem;
+    width: 8.5rem;
     height: auto;
 
-    @media (min-width: vars.screemSize(desktop)) {
-        width: 10em;
+    @media (min-width: vars.screemSize(tablet)) {
+        width: 11em;
     }
   }
 
   .controls {
     display: flex;
     gap: 1rem;
-    margin-bottom: 1rem;
+    margin-top: 2rem;
       > button {
-        padding: 0.5rem 1rem;
+        padding: 0.7rem 1.5rem;
         font-size: 1rem;
         cursor: pointer;
+        background: #242223;
+        border: solid 1px #3F3F3F;
+        color: white;
+        border-radius: 5px;
+        box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.3);
+      }
+      
+      > button:hover {
+        background: linear-gradient(242deg,rgba(36, 34, 35, 1) 0%, rgba(29, 29, 29, 1) 42%);
       }
     }
 
