@@ -5,7 +5,7 @@ import { ILazyLoading } from "@/interface/LazyLoading.Interface";
 
 export const LazyLaoding =({
   children,
-  rootMargin = "100px",
+  rootMargin = "250px",
 }: ILazyLoading) => {
   const { ref, inView } = useInView({
     triggerOnce: true,
