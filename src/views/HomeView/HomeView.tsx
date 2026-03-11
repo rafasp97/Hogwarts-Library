@@ -5,7 +5,7 @@ export default function HomeView() {
   return (
     <div  className={styles.homeview}>
       <Image
-        src="/logo.png"
+        src="/images/logo.png"
         alt="Hogwarts Library Logo"
         width={800} 
         height={400} 
