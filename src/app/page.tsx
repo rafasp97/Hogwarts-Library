@@ -21,12 +21,14 @@ const  lazyLoadingConfig = (importer: () => Promise<any>) => {
 }
 
 const HouseView = lazyLoadingConfig(() => import("@/views/HouseView/HouseView"));
+const Footer = lazyLoadingConfig(() => import("@/componets/Footer/Footer"));
 
 export default function HomePage() {
   return (
     <>
       <HomeView />
       <HouseView/>
+      <Footer/>
     </>
   );
 }

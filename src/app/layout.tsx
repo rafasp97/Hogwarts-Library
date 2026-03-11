@@ -1,5 +1,3 @@
-import Footer from "@/componets/Footer/Footer";
-import Header from "@/componets/Header/Header"
 import "@/styles/global.scss";
 
 export default function RootLayout({

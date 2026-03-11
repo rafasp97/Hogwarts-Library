@@ -1,20 +1,70 @@
+@use "../../styles/variables.scss" as vars;
 .footer {
-  background-color: #1a1a1a;
-  color: #fff;
-  padding: 1.5rem 2rem;
+  background: #171717;
+  background: linear-gradient(242deg, rgba(23, 23, 23, 1) 0%, rgba(15, 15, 15, 1) 42%);
+  color: white;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  font-size: 0.9rem;
+  height: 30vh;
+
+  @media (orientation: landscape) and (max-width: vars.screemSize(desktop)) {
+    height: 60vh;
+  }
+
+  .logoContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 80%;
+    height: auto;
+    margin-bottom: 5%;
+
+    @media (min-width: vars.screemSize(tablet)) {
+      width: 70%;
+    }
+
+    @media (min-width: vars.screemSize(desktop)) {
+      width: 60%;
+    }
+
+    @media (min-width: vars.screemSize(large)) {
+        width: 40%;
+    }
+
+    @media (orientation: landscape) and (max-width: vars.screemSize(desktop)) {
+      width: 35%;
+    }
+  }
+
+  .text{
+    display: flex;
+    gap: 2em;
+    font-size: 0.9em;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 1em;
+    height: 20%;
+  }
+
+
 }
 
-.nav a {
-  margin-left: 1rem;
-  color: #fff;
-  text-decoration: none;
-}
 
-.nav a:hover {
-  text-decoration: underline;
-}
+
+// .imageContainer {
+//   height: 60vh;
+//   width: 100%;
+//   position: relative;
+//   overflow: hidden;
+// }
+
+// .image {
+//   object-fit: cover;
+//   object-position: top;
+// }
