@@ -2,7 +2,7 @@ export const flags = [
     { 
       name: "Gryffindor", 
       src: "/images/flags/gryffindor.png",
-      description: "Coragem e ousadia definem seus membros. Eles enfrentam desafios de frente e defendem o que é certo, mesmo quando tudo parece impossível.",
+      description: "Coragem e ousadia definem seus membros. Eles enfrentam desafios de frente mesmo quando tudo parece impossível.",
       extension: "Coragem e ousadia definem seus membros. Eles enfrentam desafios de frente e defendem o que é certo, mesmo quando tudo parece impossível."
     },
     { 
