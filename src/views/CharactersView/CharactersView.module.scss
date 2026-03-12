@@ -35,14 +35,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @media (min-width: vars.screemSize(tablet)) {
+      width: 90%;
+    }
   }
 
   .grid {
     display: grid;
     gap: 1.5rem;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     justify-content: center;
-    max-width: calc(6 * 180px + 3 * 1.5rem); 
+    max-width: calc(6 * 240px + 3 * 1.5rem); 
     width: 100%;
 
     @media (min-width: vars.screemSize(desktop)) {

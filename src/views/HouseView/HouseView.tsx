@@ -2,10 +2,11 @@ import Image from "next/image";
 import styles from "./HouseView.module.scss";
 import { flags } from "@/utils/flags";
 import { useState, useEffect, useRef } from "react";
+import { useWindowSize } from "@/hooks/useWindowsSize";
 
 export default function HouseView() {
   const [index, setIndex] = useState(0);
-  const [width, setWidth] = useState(0);
+  const { width } = useWindowSize();
   const sliderRef = useRef<HTMLDivElement | null>(null);
 
   const next = () => {
@@ -15,14 +16,6 @@ export default function HouseView() {
   const prev = () => {
     setIndex((prev) => (prev - 1 + flags.length) % flags.length);
   };
-
-  useEffect(() => {
-    setWidth(window.innerWidth);
-
-    const handleResize = () => setWidth(window.innerWidth);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   useEffect(() => {
     if (!sliderRef.current || width > 1024) return;
@@ -50,7 +43,7 @@ export default function HouseView() {
     <div className={styles.houseview}>
       <header className={styles.logoContainer}>
         <Image
-          src="/images/houses.png"
+          src="/images/houses1.png"
           alt="Hogwarts Library Logo"
           width={300}
           height={300}

@@ -1,7 +1,10 @@
 export interface ICharacter {
-  id?: string;
+  id: string;
   name: string;
+  dateOfBirth: string;
+  house: string;
+  patronus: string;
   image: string;
-  house?: string;
-  species?: string;
+  actor: string;
+  alive: boolean;
 }

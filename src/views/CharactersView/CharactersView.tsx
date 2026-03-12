@@ -26,7 +26,7 @@ export default function CharactersView() {
         <div className={styles.grid}>
           {!loading && !error && characters.map((character, index) => (
             <LazyLaoding key={index}>
-              <Card name={character.name} image={character.image} />
+              <Card {...character}/>
             </LazyLaoding>
           ))}
         </div>
