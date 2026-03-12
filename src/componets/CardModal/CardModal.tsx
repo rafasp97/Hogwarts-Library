@@ -53,19 +53,23 @@ const formatDate = (value: string): string => {
 
               if (!paramsDetails.includes(key)) return null;
 
-              const extraClass = key === "house" ? styles.houseHighlight : "";
+
+              const houseStyles =
+                key === "house"
+                  ? `${styles.houseHighlight} ${styles[value.toLowerCase()]}`
+                  : "";
 
               return (
-                <div key={key} className={`${styles.gridItem} ${extraClass}`}>
+                <div key={key} className={`${styles.gridItem}`}>
                   <p className={styles.field}>{formatLabel(key)}</p>
-                  <p className={styles.value}>{formatValue(key, value)}</p>
+                  <p className={`${styles.value} ${houseStyles}`}>{formatValue(key, value)}</p>
                 </div>
               );
             })}
           </div>
         </div>
         <button className={styles.closeButton} onClick={onClose}>
-          ×
+          <Image src="/images/close.png" alt={character.name} width={30} height={40} />
         </button>
       </div>
     </div>
