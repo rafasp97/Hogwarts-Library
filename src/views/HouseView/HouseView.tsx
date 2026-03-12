@@ -40,7 +40,7 @@ export default function HouseView() {
   }, [width]);
 
   return (
-    <div className={styles.houseview}>
+    <main className={styles.houseview} id="houses">
       <header className={styles.logoContainer}>
         <Image
           src="/images/houses1.png"
@@ -85,6 +85,6 @@ export default function HouseView() {
           }
         </div>
       </section>
-    </div>
+    </main>
   );
 }

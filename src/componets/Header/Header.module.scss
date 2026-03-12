@@ -22,7 +22,13 @@
     @media (min-width: vars.screemSize(desktop)) {
         gap: 5em;
     }
+  }
 
+  .scrollToTop{
+    position: fixed;
+    right: 20;
+    bottom: 30;
+    cursor: pointer;
   }
 
 }

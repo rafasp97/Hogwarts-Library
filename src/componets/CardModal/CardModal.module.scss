@@ -130,24 +130,30 @@
   .houseHighlight {
     padding: 0.2em;
     width: 7em;
-    text-align: center;
     border-radius: 10px;
   }
 
   .gryffindor {
-    background-color: #7c1f1a;
+    text-align: center;
+    background: #6D1A12;
+    background: linear-gradient(242deg, rgba(109, 26, 18, 1) 33%, rgba(134, 35, 28, 1) 78%);
   }
 
   .slytherin {
-    background-color: #254b4e;
+    text-align: center;
+    background: #1C4147;
+    background: linear-gradient(242deg, rgba(28, 65, 71, 1) 33%, rgba(28, 76, 84, 1) 78%);
   }
 
   .ravenclaw {
-    background-color: #323b68;
+    text-align: center;
+    background: #1A1E3D;
+    background: linear-gradient(242deg, rgba(26, 30, 61, 1) 33%, rgba(37, 48, 92, 1) 78%);
   }
 
   .hufflepuff {
-    background-color: #e2ab4e;
-    color: black;
+    text-align: center;
+    background: #D19430;
+    background: linear-gradient(242deg, rgba(209, 148, 48, 1) 33%, rgba(228, 172, 79, 1) 78%);
   }
 }

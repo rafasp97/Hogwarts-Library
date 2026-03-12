@@ -8,7 +8,7 @@ export default function CharactersView() {
   const { characters, loading, error } = useCharacters();
 
   return (
-    <main className={styles.charactersView}>
+    <main className={styles.charactersView} id="characters">
       <header className={styles.logoContainer}>
         <Image
           src="/images/characters.png"

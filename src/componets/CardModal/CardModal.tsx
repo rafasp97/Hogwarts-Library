@@ -53,7 +53,6 @@ const formatDate = (value: string): string => {
 
               if (!paramsDetails.includes(key)) return null;
 
-
               const houseStyles =
                 key === "house"
                   ? `${styles.houseHighlight} ${styles[value.toLowerCase()]}`
