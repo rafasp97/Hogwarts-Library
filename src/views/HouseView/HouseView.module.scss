@@ -14,6 +14,10 @@
       height: 100vh;
     }
 
+    @media (orientation: landscape) and (max-width: vars.screemSize(desktop)) {
+      height: 100%;
+    }
+
   > section {
     width: 90%;
     height: 100%;
@@ -176,6 +180,10 @@
       
       > button:hover {
         background: linear-gradient(242deg,rgba(36, 34, 35, 1) 0%, rgba(29, 29, 29, 1) 42%);
+      }
+
+      @media (orientation: landscape) and (max-width: vars.screemSize(desktop)) {
+        margin-top: 0rem;
       }
     }
 

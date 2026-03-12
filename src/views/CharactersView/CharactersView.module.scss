@@ -53,6 +53,11 @@
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       max-width: calc(6 * 240px + 3 * 1.5rem); 
     }
+
+    @media (orientation: landscape) and (max-width: vars.screemSize(desktop)) {
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      max-width: calc(6 * 180px + 3 * 1.5rem); 
+    }
   }
 
   .card {

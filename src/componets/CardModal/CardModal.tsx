@@ -2,7 +2,7 @@ import Image from "next/image";
 import styles from "./CardModal.module.scss";
 import { ICardModal } from "@/interface/CardModal.Interface";
 import { useWindowSize } from "@/hooks/useWindowsSize";
-import { useState } from "react";
+import { months, paramsDetails } from "@/utils/constans";
 
 export default function CardModal({ character, onClose }: ICardModal) {
   const imageSrc = character.image || "/images/no-image.png";
@@ -13,6 +13,27 @@ export default function CardModal({ character, onClose }: ICardModal) {
       .replace(/([A-Z])/g, " $1") 
       .replace(/^./, (str) => str.toUpperCase()); 
   }
+
+  const formatValue = (key: string, value: string | boolean | undefined): string => {
+    if (!value && key !== "alive") return "Not Informed";
+
+    switch (key) {
+      case "alive":
+        return value ? "Yes" : "No";
+      case "dateOfBirth":
+        return typeof value === "string" ? formatDate(value) : "Not Informed";
+      default:
+        return String(value);
+    }
+  };
+
+const formatDate = (value: string): string => {
+  const [day, month, year] = value.split("-").map(Number);
+
+  if (!month || month < 1 || month > 12) return value;
+
+  return `${day} ${months[month - 1]} ${year}`;
+};
 
   return (
     <div className={styles.overlay} onClick={onClose}>
@@ -30,22 +51,14 @@ export default function CardModal({ character, onClose }: ICardModal) {
           <div className={styles.detailsGrid}>
             {Object.entries(character).map(([key, value]) => {
 
-              const allowedFields = ["dateOfBirth", "house", "patronus", "actor", "alive"];
-              if (!allowedFields.includes(key)) return null;
-
-              const displayValue =
-                key === "alive"
-                  ? value
-                    ? "Yes"
-                    : "No"
-                  : value ? value : 'Not Informed';
+              if (!paramsDetails.includes(key)) return null;
 
               const extraClass = key === "house" ? styles.houseHighlight : "";
 
               return (
                 <div key={key} className={`${styles.gridItem} ${extraClass}`}>
                   <p className={styles.field}>{formatLabel(key)}</p>
-                  <p className={styles.value}>{displayValue}</p>
+                  <p className={styles.value}>{formatValue(key, value)}</p>
                 </div>
               );
             })}
