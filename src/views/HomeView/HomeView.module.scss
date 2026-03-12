@@ -3,37 +3,56 @@
     display: flex;
     flex-direction: column;
     height: 100vh;
-    background-image: url('/images/backgrounds/homeview.jpg'); 
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center; 
-    box-shadow: inset 0 -150px 150px -150px rgba(0,0,0,0.95);
+    background: #0c0c0c;
 
-  .logoContainer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-  }
-  .logo {
-    width: 80%;
-    height: auto;
-    margin-bottom: 5%;
+    .container{
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      border-radius: 15px;
+      overflow: hidden;
+      color: white;
+      gap: 3em;
 
-    @media (min-width: vars.screemSize(tablet)) {
-      width: 70%;
+        > p {
+          position: relative;
+          color: #f5f3f0;
+          font-size: 1.3em;
+          padding: 0em 2em;
+          text-align: center;
+          text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+
+          @media (min-width: vars.screemSize(desktop)) {
+            font-size: 1.5em;
+          }
+        }
+      
+        @media (min-width: vars.screemSize(tablet)) {
+          margin: 5%;
+          gap: 0em
+        }
+
     }
 
-    @media (min-width: vars.screemSize(desktop)) {
-      width: 60%;
-    }
+    .logo {
+      width: 80%;
+      height: auto;
+      margin-bottom: 5%;
+      position: relative;
 
-      @media (min-width: vars.screemSize(large)) {
+      @media (min-width: vars.screemSize(tablet)) {
+        width: 70%;
+      }
+
+      @media (min-width: vars.screemSize(desktop)) {
         width: 40%;
-    }
+      }
 
-    @media (orientation: landscape) and (max-width: vars.screemSize(desktop)) {
-      width: 45%;
-    }
+      @media (orientation: landscape) and (max-width: vars.screemSize(desktop)) {
+        width: 45%;
+      }
   }
 }

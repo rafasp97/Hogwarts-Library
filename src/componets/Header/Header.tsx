@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Header() {
 
-    const [showScrollTop, setShowScrollTop] = useState(false);
+  const [showScrollTop, setShowScrollTop] = useState(false) ;
 
   const handleScroll = (targetId: string) => {
     const target = document.getElementById(targetId);
@@ -51,16 +51,18 @@ export default function Header() {
 
   return (
     <header className={styles.header}>
-      <nav className={styles.nav}>
-        <a href="#home" onClick={() => handleScroll("home")}>HOME</a>
-        <a href="#houses" onClick={() => handleScroll("houses")}>HOUSES</a>
-        <a href="#characters" onClick={() => handleScroll("characters")}>CHARACTERS</a>
-      </nav>
-      {showScrollTop && (
-        <div className={styles.scrollToTop} onClick={scrollToTop}>
-          <Image src="/images/magic.png" alt="icon" width={50} height={50} />
-        </div>
-      )}
+      <div className={styles.headerContainer}>
+        <nav className={styles.nav}>
+          <a href="#home" onClick={() => handleScroll("home")}>HOME</a>
+          <a href="#houses" onClick={() => handleScroll("houses")}>HOUSES</a>
+          <a href="#characters" onClick={() => handleScroll("characters")}>CHARACTERS</a>
+        </nav>
+        {showScrollTop && (
+          <div className={styles.scrollToTop} onClick={scrollToTop}>
+            <Image src="/images/magic.png" alt="icon" width={50} height={50} />
+          </div>
+        )}
+      </div>
     </header>
   );
 }
