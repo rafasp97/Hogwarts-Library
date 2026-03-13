@@ -13,8 +13,7 @@
 }
 
 .modal {
-  background: #171717;
-  background: linear-gradient(242deg, rgba(23, 23, 23, 1) 0%, rgba(15, 15, 15, 1) 37%);
+  background: #0c0c0c;
   color: white;
   border-radius: 12px;
   overflow: hidden;
@@ -26,9 +25,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.9);
   padding: 1em 1em 2em 1em;
-  border: solid #383838 2px;
+  box-shadow: inset 0px 0px 25px rgba(31, 31, 31, 0.712);
 
   @media (min-width: vars.screemSize(desktop)) {
     max-width: 50em;
@@ -66,6 +64,7 @@
 
 .container {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-around;
   padding: 1em;
@@ -79,9 +78,10 @@
 .image {
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  height: auto;
   
   @media (min-width: vars.screemSize(desktop)) {
-    height: 25em;
+    height: 15em;
   }
 
   @media (orientation: landscape) and (max-width: vars.screemSize(desktop)) {
@@ -92,7 +92,7 @@
 
 .detailsGrid {
   display: grid;
-  gap: 1rem;
+  gap: 0.5rem;
   width: 100%;
 
   @media (min-width: vars.screemSize(tablet)) {
@@ -108,29 +108,36 @@
     gap: 0.5rem;
   }
 
-  .gridItem {
-    display: flex;
-    flex-direction: column;
-
+  .containerItem {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(50px, 1fr));
+  justify-content: center;
+  align-items: center;
+  gap: 0em;
 
     .field {
       font-weight: 600;
       color: #828181;
       font-family: var(--font-oswald);
       text-transform: uppercase;
+      font-size: 0.9em;
+      width: 7em;
+      text-align: end;
     }
 
     .value {
-      margin-top: 0.25rem;
       color: white;
-      font-size: 1.4em;
+      font-size: 0.9em;
+      width: 100%;
+      text-align: start;
     }
   }
 
   .houseHighlight {
     padding: 0.2em;
     width: 7em;
-    border-radius: 10px;
+    text-align: center !important;
+    border-radius: 5px;
   }
 
   .gryffindor {

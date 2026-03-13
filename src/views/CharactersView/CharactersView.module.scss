@@ -5,14 +5,28 @@
   align-items: center;
   justify-content: center;
   gap: 0.5em; 
-  background: #171717;
-  background: linear-gradient(128deg, rgba(23, 23, 23, 1) 1%, rgba(16, 16, 16, 1) 31%, rgba(15, 15, 15, 1) 67%);
+  background: #0c0c0c;
 
   .logoContainer{
     display: flex;
+    flex-direction: column;
+    gap: 0.5em;
     justify-content: center;
     align-items: center;
   }
+
+  .p {
+    position: relative;
+    color: #f5f3f0;
+    font-size: 1.1em;
+    padding: 0em 2em;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+
+    @media (min-width: vars.screemSize(desktop)) {
+      font-size: 1.25em;
+    }
+}
 
   .logo {
     width: 70%;
@@ -30,33 +44,45 @@
 
   .charactersSection {
     width: 100%;
-    padding: 2rem;
-    padding: 2em 5em;
+    padding: 1em;
     display: flex;
     align-items: center;
     justify-content: center;
 
     @media (min-width: vars.screemSize(tablet)) {
       width: 90%;
+      padding: 1em 0;
     }
   }
 
   .grid {
     display: grid;
-    gap: 1.5rem;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1em;
     justify-content: center;
-    max-width: calc(6 * 240px + 3 * 1.5rem); 
+    grid-template-columns: repeat(2, minmax(120px, 1fr));
     width: 100%;
 
-    @media (min-width: vars.screemSize(desktop)) {
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      max-width: calc(6 * 240px + 3 * 1.5rem); 
+    
+    @media (orientation: landscape) and (max-width: vars.screemSize(desktop)) {
+      grid-template-columns: repeat(4, minmax(120px, 1fr));
+      gap: 1.5em;
     }
 
-    @media (orientation: landscape) and (max-width: vars.screemSize(desktop)) {
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      max-width: calc(6 * 180px + 3 * 1.5rem); 
+    @media (min-width: vars.screemSize(tablet)) {
+      grid-template-columns: repeat(3, minmax(120px, 1fr));
+    }
+
+    @media (min-width: vars.screemSize(desktop)) {
+      gap: 2em;
+      grid-template-columns: repeat(4, minmax(120px, 1fr));
+    }
+
+    @media (min-width: vars.screemSize(large)) {
+      grid-template-columns: repeat(5, minmax(120px, 1fr));
+    }
+
+    @media (min-width: vars.screemSize(xxl)) {
+      grid-template-columns: repeat(6, minmax(120px, 1fr));
     }
   }
 

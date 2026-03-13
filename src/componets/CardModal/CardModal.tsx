@@ -43,11 +43,9 @@ const formatDate = (value: string): string => {
       >
         <h2 className={styles.name}>{character.name}</h2>
         <div className={styles.container}>
-          { width > 640 && 
-            <figure>
-              <Image src={imageSrc} className={styles.image} alt={character.name} width={300} height={400} />
-            </figure> 
-          }
+          <figure>
+            <Image src={imageSrc} className={styles.image} alt={character.name} width={200} height={300} />
+          </figure> 
           <div className={styles.detailsGrid}>
             {Object.entries(character).map(([key, value]) => {
 
@@ -59,7 +57,7 @@ const formatDate = (value: string): string => {
                   : "";
 
               return (
-                <div key={key} className={`${styles.gridItem}`}>
+                <div key={key} className={`${styles.containerItem}`}>
                   <p className={styles.field}>{formatLabel(key)}</p>
                   <p className={`${styles.value} ${houseStyles}`}>{formatValue(key, value)}</p>
                 </div>

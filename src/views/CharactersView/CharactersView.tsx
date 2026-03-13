@@ -18,6 +18,7 @@ export default function CharactersView() {
           className={styles.logo}
         />
       </header>
+      <p className={styles.p}>Meet the Wizards, Witches, and Magical Creatures of Hogwarts.</p>
 
       <section className={styles.charactersSection}>
         {loading && <p className={styles.statusMessage}>Carregando personagens...</p>}
