@@ -9,7 +9,7 @@ export default function CharactersView() {
 
   return (
     <main className={styles.charactersView} id="characters">
-      <h1>CARACTERS</h1>
+      <h1>CHARACTERS</h1>
       <p className={styles.p}>Meet the Wizards, Witches, and Magical Creatures of Hogwarts.</p>
 
       <section className={styles.charactersSection}>

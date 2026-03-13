@@ -28,7 +28,7 @@ A Hogwarts Library é uma landing page interativa que consome uma API contendo i
 1. **Clone o repositório:**
 
 ```bash
-git clone https://github.com/rafasp97/Streamline.git
+git clone https://github.com/rafasp97/Hogwarts-Library.git
 ```
 
 2. **Instale as dependências:**
