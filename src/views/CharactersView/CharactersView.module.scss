@@ -28,10 +28,16 @@
     padding: 0em 2em;
     text-align: center;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+          border: solid red 1px;
 
     @media (min-width: vars.screemSize(desktop)) {
       font-size: 1.25em;
     }
+
+    @media (orientation: landscape) and (max-width: vars.screemSize(desktop)) {
+      font-size: 1em;
+    }
+
 }
 
   .charactersSection {
