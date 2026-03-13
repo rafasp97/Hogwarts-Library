@@ -7,12 +7,18 @@
   gap: 0.5em; 
   background: #0c0c0c;
 
-  .logoContainer{
-    display: flex;
-    flex-direction: column;
-    gap: 0.5em;
-    justify-content: center;
-    align-items: center;
+  > h1 {
+    color: white;
+    font-size: 2em;
+    padding-top: 1em;
+
+    @media (min-width: vars.screemSize(tablet)) {
+      font-size: 2.5em;
+    }
+
+    @media (min-width: vars.screemSize(desktop)) {
+      font-size: 4.5em;
+    }
   }
 
   .p {
@@ -27,20 +33,6 @@
       font-size: 1.25em;
     }
 }
-
-  .logo {
-    width: 70%;
-    height: auto;
-    margin-top: 2.5rem;
-
-    @media (min-width: vars.screemSize(tablet)) {
-      width: 100%;
-    }
-
-    @media (orientation: landscape) and (max-width: vars.screemSize(desktop)) {
-      width: 70%;
-    }
-  }
 
   .charactersSection {
     width: 100%;

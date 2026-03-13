@@ -9,15 +9,7 @@ export default function CharactersView() {
 
   return (
     <main className={styles.charactersView} id="characters">
-      <header className={styles.logoContainer}>
-        <Image
-          src="/images/characters.png"
-          alt="Hogwarts Library Logo"
-          width={300}
-          height={300}
-          className={styles.logo}
-        />
-      </header>
+      <h1>CARACTERS</h1>
       <p className={styles.p}>Meet the Wizards, Witches, and Magical Creatures of Hogwarts.</p>
 
       <section className={styles.charactersSection}>
