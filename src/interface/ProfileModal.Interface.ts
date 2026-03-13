@@ -1,6 +1,6 @@
 import { ICharacter } from "./Character.Interface";
 
-export interface ICardModal {
+export interface IProfileModal {
   character: ICharacter;
   onClose: () => void;
 }

@@ -1,12 +1,10 @@
 import Image from "next/image";
-import styles from "./CardModal.module.scss";
-import { ICardModal } from "@/interface/CardModal.Interface";
-import { useWindowSize } from "@/hooks/useWindowsSize";
+import styles from "./ProfileModal.module.scss";
+import { IProfileModal } from "@/interface/ProfileModal.Interface";
 import { months, paramsDetails } from "@/utils/constans";
 
-export default function CardModal({ character, onClose }: ICardModal) {
+export default function ProfileModal({ character, onClose }: IProfileModal) {
   const imageSrc = character.image || "/images/no-image.png";
-  const { width } = useWindowSize();
 
   const formatLabel = (key: string) => {
     return key

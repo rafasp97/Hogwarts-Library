@@ -37,6 +37,10 @@
   @media (min-width: vars.screemSize(tablet)) {
     flex-direction: row;
   }
+
+  @media (min-width: vars.screemSize(desktop)) {
+    gap: 5em;
+  }
 }
 
 .reverse {
@@ -49,6 +53,10 @@
 
   @media (min-width: vars.screemSize(tablet)) {
     width: 40%;
+  }
+
+  @media (min-width: vars.screemSize(large)) {
+    width: 90%;
   }
 
   @media (orientation: landscape) and (max-width: vars.screemSize(desktop)) {

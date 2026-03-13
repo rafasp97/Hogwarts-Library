@@ -1,6 +1,5 @@
-import Image from "next/image";
 import styles from "./CharactersView.module.scss";
-import Card from "@/componets/Card/Card";
+import Profile from "@/componets/Profile/Profile";
 import { LazyLaoding } from "@/utils/LazyLoading";
 import { useCharacters } from "@/hooks/useCaracters";
 
@@ -19,7 +18,7 @@ export default function CharactersView() {
         <div className={styles.grid}>
           {!loading && !error && characters.map((character, index) => (
             <LazyLaoding key={index}>
-              <Card {...character}/>
+              <Profile {...character}/>
             </LazyLaoding>
           ))}
         </div>

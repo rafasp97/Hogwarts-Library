@@ -1,0 +1,78 @@
+@use "../../styles/variables.scss" as vars;
+
+.deathlyRelicsView{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 4em 0em;
+  gap: 0.5em; 
+  background: #0c0c0c;
+
+  @media (min-width: vars.screemSize(tablet)) {
+    height: 100%;
+    padding: 4em 0em;
+  }
+
+  @media (min-width: vars.screemSize(desktop)) {
+    height: 100vh;
+  }
+
+  > h1 {
+    color: white;
+    font-size: 2em;
+
+    @media (min-width: vars.screemSize(tablet)) {
+      font-size: 2.5em;
+    }
+
+    @media (min-width: vars.screemSize(desktop)) {
+      font-size: 4.5em;
+    }
+  }
+
+  .p {
+    position: relative;
+    color: #f5f3f0;
+    font-size: 1.1em;
+    padding: 0em 2em 1em 2em;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+
+    @media (min-width: vars.screemSize(desktop)) {
+      font-size: 1.25em;
+    }
+  }
+
+  .container {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+
+    @media (min-width: vars.screemSize(tablet)) {
+      width: 85%;
+      padding: 0;
+    }
+  }
+
+  .grid {
+    display: flex;
+    gap: 3em;
+    width: 100%;
+    padding-bottom: 1em;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+
+    @media (min-width: vars.screemSize(tablet)) {
+      gap: 1em;
+    }
+    
+
+    @media (min-width: vars.screemSize(desktop)) {
+      gap: 3em;
+      overflow: visible;
+      justify-content: center;
+    }
+  }
+}

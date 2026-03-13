@@ -50,3 +50,18 @@ export const houses = [
     description: "Ambition, cunning, and determination mark its members, who pursue their goals with strategy. Slytherin values ambition, leadership, and resourcefulness. Its members are strategic thinkers who pursue greatness and are willing to take bold paths to achieve success."
   }
 ];
+
+export const relics = [
+  {
+    name: "ELDER WAND",
+    image: "/images/deathlyRelics/1.jpg",
+  },
+  {
+    name: "RESURRECTION STONE",
+    image: "/images/deathlyRelics/2.jpg",
+  },
+  {
+    name: "INVISIBILITY CLOAK",
+    image: "/images/deathlyRelics/3.jpg",
+  },
+];

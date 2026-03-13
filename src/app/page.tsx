@@ -1,9 +1,10 @@
 "use client";
 
 import HomeView from "@/views/HomeView/HomeView";
-import HouseViewComponent from "@/views/HouseView/HouseView";
-import CharactersViewComponent from "@/views/CharactersView/CharactersView";
-import FooterComponent from "@/componets/Footer/Footer";
+import HouseView from "@/views/HouseView/HouseView";
+import CharactersView from "@/views/CharactersView/CharactersView";
+import Footer from "@/componets/Footer/Footer";
+import DeathlyRelicsView from "@/views/DeathlyRelicsView/DeathlyRelicsView";
 import { LazyLaoding } from "@/utils/LazyLoading";
 
 export default function HomePage() {
@@ -12,15 +13,19 @@ export default function HomePage() {
       <HomeView />
 
       <LazyLaoding>
-        <HouseViewComponent/>
+        <HouseView/>
       </LazyLaoding>
 
       <LazyLaoding>
-        <CharactersViewComponent />
+        <DeathlyRelicsView/>
       </LazyLaoding>
 
       <LazyLaoding>
-        <FooterComponent />
+        <CharactersView />
+      </LazyLaoding>
+
+      <LazyLaoding>
+        <Footer />
       </LazyLaoding>
 
     </>
