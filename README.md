@@ -34,13 +34,13 @@ git clone https://github.com/rafasp97/Hogwarts-Library.git
 2. **Instale as dependências:**
 
 ```bash
-cd npm install
+npm install
 ```
 
 3. **Rode o projeto:**
 
 ```bash
-cd npm run dev
+npm run dev
 ```
 
 ---
